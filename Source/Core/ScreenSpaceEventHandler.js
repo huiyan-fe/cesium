@@ -139,10 +139,10 @@ import ScreenSpaceEventType from './ScreenSpaceEventType.js';
         var screenSpaceEventType;
         if (button === MouseButton.LEFT) {
             screenSpaceEventType = ScreenSpaceEventType.LEFT_DOWN;
-        } else if (button === MouseButton.MIDDLE) {
+        } else if (button === MouseButton.MIDDLE || button === MouseButton.RIGHT) {
             screenSpaceEventType = ScreenSpaceEventType.MIDDLE_DOWN;
-        } else if (button === MouseButton.RIGHT) {
-            screenSpaceEventType = ScreenSpaceEventType.RIGHT_DOWN;
+        // } else if (button === MouseButton.RIGHT) {
+        //     screenSpaceEventType = ScreenSpaceEventType.RIGHT_DOWN;
         } else {
             return;
         }
@@ -212,14 +212,16 @@ import ScreenSpaceEventType from './ScreenSpaceEventType.js';
             cancelMouseEvent(screenSpaceEventHandler, ScreenSpaceEventType.LEFT_UP, ScreenSpaceEventType.LEFT_CLICK, event);
             screenSpaceEventHandler._buttonDown[MouseButton.LEFT] = false;
         }
-        if(screenSpaceEventHandler._buttonDown[MouseButton.MIDDLE]){
+        if(screenSpaceEventHandler._buttonDown[MouseButton.MIDDLE] || screenSpaceEventHandler._buttonDown[MouseButton.RIGHT]){
             cancelMouseEvent(screenSpaceEventHandler, ScreenSpaceEventType.MIDDLE_UP, ScreenSpaceEventType.MIDDLE_CLICK, event);
             screenSpaceEventHandler._buttonDown[MouseButton.MIDDLE] = false;
         }
+        /*
         if(screenSpaceEventHandler._buttonDown[MouseButton.RIGHT]){
             cancelMouseEvent(screenSpaceEventHandler, ScreenSpaceEventType.RIGHT_UP, ScreenSpaceEventType.RIGHT_CLICK, event);
             screenSpaceEventHandler._buttonDown[MouseButton.RIGHT] = false;
         }
+        */
     }
 
     var mouseMoveEvent = {
