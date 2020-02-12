@@ -26,6 +26,7 @@
 
 .cesium-viewer .cesium-widget-credits {
     display: inline;
+    display: none;
     position: static;
     bottom: auto;
     left: auto;
