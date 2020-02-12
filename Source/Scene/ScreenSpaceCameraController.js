@@ -240,7 +240,7 @@ import TweenCollection from './TweenCollection.js';
         this._globe = undefined;
         this._ellipsoid = undefined;
 
-        this._aggregator = new CameraEventAggregator(scene.canvas);
+        this._aggregator = new CameraEventAggregator(scene.canvas.parentNode);
 
         this._lastInertiaSpinMovement = undefined;
         this._lastInertiaZoomMovement = undefined;

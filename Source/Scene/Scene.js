@@ -2281,6 +2281,10 @@ import View from './View.js';
                 }
             }
 
+            if (scene.insertRender) {
+                scene.insertRender();
+            }
+
             if (separatePrimitiveFramebuffer) {
                 // Render to primitive framebuffer in all other passes
                 passState.framebuffer = globeDepth.primitiveFramebuffer;
