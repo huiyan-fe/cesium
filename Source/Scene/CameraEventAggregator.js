@@ -147,10 +147,10 @@ import CameraEventType from './CameraEventType.js';
         if (type === CameraEventType.LEFT_DRAG) {
             down = ScreenSpaceEventType.LEFT_DOWN;
             up = ScreenSpaceEventType.LEFT_UP;
-        } else if (type === CameraEventType.RIGHT_DRAG) {
+        } else if (type === CameraEventType.MIDDLE_DRAG) {
             down = ScreenSpaceEventType.RIGHT_DOWN;
             up = ScreenSpaceEventType.RIGHT_UP;
-        } else if (type === CameraEventType.MIDDLE_DRAG) {
+        } else if (type === CameraEventType.RIGHT_DRAG) {
             down = ScreenSpaceEventType.MIDDLE_DOWN;
             up = ScreenSpaceEventType.MIDDLE_UP;
         }

@@ -2310,10 +2310,6 @@ import View from './View.js';
                 }
             }
 
-            if (scene.insertRender) {
-                scene.insertRender();
-            }
-
             if (separatePrimitiveFramebuffer) {
                 // Render to primitive framebuffer in all other passes
                 passState.framebuffer = globeDepth.primitiveFramebuffer;
@@ -2452,6 +2448,11 @@ import View from './View.js';
             commands = frustumCommands.commands[Pass.TRANSLUCENT];
             commands.length = frustumCommands.indices[Pass.TRANSLUCENT];
             executeTranslucentCommands(scene, executeCommand, passState, commands, invertClassification);
+
+            if (scene.insertRender) {
+                passState.framebuffer && passState.framebuffer._bind();
+                scene.insertRender();
+            }
 
             if (context.depthTexture && scene.useDepthPicking && (environmentState.useGlobeDepthFramebuffer || renderTranslucentDepthForPick)) {
                 // PERFORMANCE_IDEA: Use MRT to avoid the extra copy.
