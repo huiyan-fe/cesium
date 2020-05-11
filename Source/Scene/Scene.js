@@ -2724,6 +2724,11 @@ function executeCommands(scene, passState) {
       invertClassification
     );
 
+    if (scene.insertRender) {
+        passState.framebuffer && passState.framebuffer._bind();
+        scene.insertRender();
+    }
+
     if (
       context.depthTexture &&
       scene.useDepthPicking &&
