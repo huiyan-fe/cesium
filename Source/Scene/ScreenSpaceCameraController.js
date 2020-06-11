@@ -158,7 +158,7 @@ function ScreenSpaceCameraController(scene) {
    * @default [{@link CameraEventType.RIGHT_DRAG}, {@link CameraEventType.WHEEL}, {@link CameraEventType.PINCH}]
    */
   this.zoomEventTypes = [
-    CameraEventType.RIGHT_DRAG,
+    // CameraEventType.RIGHT_DRAG,
     CameraEventType.WHEEL,
     CameraEventType.PINCH,
   ];
@@ -191,6 +191,7 @@ function ScreenSpaceCameraController(scene) {
    */
   this.tiltEventTypes = [
     CameraEventType.MIDDLE_DRAG,
+    CameraEventType.RIGHT_DRAG,
     CameraEventType.PINCH,
     {
       eventType: CameraEventType.LEFT_DRAG,

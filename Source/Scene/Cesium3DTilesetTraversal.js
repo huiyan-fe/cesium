@@ -57,6 +57,11 @@ Cesium3DTilesetTraversal.selectTiles = function (tileset, frameState) {
     return;
   }
 
+    if (tileset.maximumCameraHeight) {
+        if (frameState.camera.positionCartographic.height > tileset.maximumCameraHeight) {
+            return;
+        }
+    }
   // The tileset doesn't meet the SSE requirement, therefore the tree does not need to be rendered
   if (
     root.getScreenSpaceError(frameState, true) <=
